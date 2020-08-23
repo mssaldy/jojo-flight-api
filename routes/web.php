@@ -20,3 +20,13 @@ $router->get('/', function() use ($router) {
 $router->post('/login', 'LoginController@index');
 $router->post('/register', 'UserController@register');
 $router->get('/user/{id}', ['middleware' => 'auth', 'uses' => 'LoginController@index']);
+
+$router->get('/flights', 'FlightController@index');
+$router->post('/flights/create', 'FlightController@create');
+$router->get('/flights/filter', 'FlightController@search');
+
+$router->get('/airlines', 'AirlineController@index');
+$router->post('/airlines/create', 'AirlineController@create');
+$router->get('/airlines/{id}', 'AirlineController@read');
+$router->post('/airlines/update/{id}', 'AirlineController@update');
+$router->get('/airlines/delete/{id}', 'AirlineController@delete');
