@@ -91,6 +91,7 @@ after login use this `"api_token": "734e1d761f6d87a73b4a0434910356a568f5b159"` t
 ## Sample Access Airlines 
 GET ``http://localhost:8000/airlines/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159``
 ```json
+     {
         "data": [
                 {
                     "id": 1,
@@ -112,7 +113,9 @@ GET ``http://localhost:8000/airlines/?api_token=734e1d761f6d87a73b4a0434910356a5
                             "updated_at": "2020-08-23T15:43:13.000000Z"
                         }
                     ]
-                }
+               }
+          ]
+     }
 ```
 
 ## Route Config
