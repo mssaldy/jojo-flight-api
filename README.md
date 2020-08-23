@@ -42,6 +42,87 @@ if success will be return :
     }
 ```
 
+## Register User
+POST `http://localhost:8000/register`
+Example:
+
+Key               | Value
+------------------| ------------------
+email             | myemail@gmail.com
+username          | mssaldy
+password          | thepassword
+
+if success will be return :
+```json
+    {
+        "success": true,
+        "message": "Success Register"
+    }
+```
+
+## Login User
+after register user POST `http://localhost:8000/login`
+Example:
+
+Key               | Value
+------------------| ------------------
+email             | myemail@gmail.com
+username          | mssaldy
+password          | thepassword
+
+if success will be return :
+```json
+    {
+        "success": true,
+        "api_token": "734e1d761f6d87a73b4a0434910356a568f5b159",
+        "message": {
+            "id": 1,
+            "username": "mssaldy",
+            "email": "myemail@gmail.com",
+            "remember_token": null,
+            "created_at": "2020-08-23T15:44:34.000000Z",
+            "updated_at": "2020-08-23T15:44:34.000000Z",
+            "deleted_at": null
+        }
+    }
+```
+after login use this `"api_token": "734e1d761f6d87a73b4a0434910356a568f5b159"` to access api
+
+## Sample Access Airlines 
+GET ``http://localhost:8000/airlines/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159``
+```json
+        "data": [
+                {
+                    "id": 1,
+                    "code": "QF400",
+                    "name_airlines": "Qantas (QF)",
+                    "created_at": "2020-08-23T15:43:13.000000Z",
+                    "updated_at": "2020-08-23T15:43:13.000000Z",
+                    "flight": [
+                        {
+                            "id": 1,
+                            "user_id": 1,
+                            "airline_id": 1,
+                            "flightNumber": "QF400",
+                            "departurePort": "MEL",
+                            "arrivalPort": "SDY",
+                            "departureTime": "2020-08-23 15:43:13",
+                            "arrivalTime": "2020-08-24 15:43:13",
+                            "created_at": "2020-08-23T15:43:13.000000Z",
+                            "updated_at": "2020-08-23T15:43:13.000000Z"
+                        }
+                    ]
+                }
+```
+
+## Route Config
+Sample Route:
+```php
+* GET http://localhost:8000/flights/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
+* GET http://localhost:8000/airlines/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
+* GET http://localhost:8000/airlines/delete/1?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
+```
+
 ## Contributing
 
 Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
