@@ -11,6 +11,12 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->get('/', function() use ($router) {
+    $res['success'] = true;
+    $res['result'] = "Welcome to jojo-flight-api";
+    return response()->json($res);
 });
+
+$router->post('/login', 'LoginController@index');
+$router->post('/register', 'UserController@register');
+$router->get('/user/{id}', ['middleware' => 'auth', 'uses' => 'LoginController@index']);
