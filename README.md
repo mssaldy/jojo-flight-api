@@ -119,6 +119,7 @@ GET ``http://localhost:8000/airlines/?api_token=734e1d761f6d87a73b4a0434910356a5
 Sample Route:
 ```php
 * GET http://localhost:8000/flights/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
+* GET http://localhost:8000/flights/filter/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159&flightNumber=CX500
 * GET http://localhost:8000/airlines/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
 * GET http://localhost:8000/airlines/delete/1?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
 ```
