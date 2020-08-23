@@ -33,12 +33,12 @@ Listening on http://localhost:8000
 Document root is C:\xampp\htdocs\jojo-flight-api\public
 Press Ctrl-C to quit.
 ```
-and type ``http://localhost:8000``
+and type ``http://localhost:8000`` in browser or postman
 if success will be return :
 ```json
     {
-    "success": true,
-    "result": "Welcome to jojo-flight-api"
+        "success": true,
+        "result": "Welcome to jojo-flight-api"
     }
 ```
 
