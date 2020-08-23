@@ -11,6 +11,37 @@ Laravel Lumen is a stunningly fast PHP micro-framework for building web applicat
 
 Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
 
+## Set Connection DB In .env file
+``` php
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=jojo-db # example name db
+DB_USERNAME=root    # example db username
+DB_PASSWORD= 
+```
+## Migrate DB
+After set connection database. Open terminal and type `php artisan migrate` for generate database then type `php artisan db:seed` for generate seeder migration.
+
+## Testing API IN LOCAL
+after migration database, open terminal and type :
+``php -S localhost:8000 -t ./public``
+
+```json
+PHP 7.3.7 Development Server started at Sun Aug 23 22:03:47 2020
+Listening on http://localhost:8000
+Document root is C:\xampp\htdocs\jojo-flight-api\public
+Press Ctrl-C to quit.
+```
+and type ``http://localhost:8000``
+if success will be return :
+```json
+    {
+    "success": true,
+    "result": "Welcome to jojo-flight-api"
+    }
+```
+
 ## Contributing
 
 Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
