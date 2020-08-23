@@ -36,10 +36,10 @@ Press Ctrl-C to quit.
 and type ``http://localhost:8000`` in browser or postman
 if success will be return :
 ```json
-    {
-        "success": true,
-        "result": "Welcome to jojo-flight-api"
-    }
+{
+    "success": true,
+    "result": "Welcome to jojo-flight-api"
+}
 ```
 
 ## Register User
@@ -54,10 +54,10 @@ password          | thepassword
 
 if success will be return :
 ```json
-    {
-        "success": true,
-        "message": "Success Register"
-    }
+{
+    "success": true,
+    "message": "Success Register"
+}
 ```
 
 ## Login User
@@ -72,51 +72,73 @@ password          | thepassword
 
 if success will be return :
 ```json
-    {
-        "success": true,
-        "api_token": "734e1d761f6d87a73b4a0434910356a568f5b159",
-        "message": {
-            "id": 1,
-            "username": "mssaldy",
-            "email": "myemail@gmail.com",
-            "remember_token": null,
-            "created_at": "2020-08-23T15:44:34.000000Z",
-            "updated_at": "2020-08-23T15:44:34.000000Z",
-            "deleted_at": null
-        }
+{
+    "success": true,
+    "api_token": "734e1d761f6d87a73b4a0434910356a568f5b159",
+    "message": {
+        "id": 1,
+        "username": "mssaldy",
+        "email": "myemail@gmail.com",
+        "remember_token": null,
+        "created_at": "2020-08-23T15:44:34.000000Z",
+        "updated_at": "2020-08-23T15:44:34.000000Z",
+        "deleted_at": null
     }
+}
 ```
 after login use this `"api_token": "734e1d761f6d87a73b4a0434910356a568f5b159"` to access api
 
-## Sample Access Airlines 
+## Sample GET Airlines 
 GET ``http://localhost:8000/airlines/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159``
 ```json
-     {
-        "data": [
-                {
-                    "id": 1,
-                    "code": "QF400",
-                    "name_airlines": "Qantas (QF)",
-                    "created_at": "2020-08-23T15:43:13.000000Z",
-                    "updated_at": "2020-08-23T15:43:13.000000Z",
-                    "flight": [
-                        {
-                            "id": 1,
-                            "user_id": 1,
-                            "airline_id": 1,
-                            "flightNumber": "QF400",
-                            "departurePort": "MEL",
-                            "arrivalPort": "SDY",
-                            "departureTime": "2020-08-23 15:43:13",
-                            "arrivalTime": "2020-08-24 15:43:13",
-                            "created_at": "2020-08-23T15:43:13.000000Z",
-                            "updated_at": "2020-08-23T15:43:13.000000Z"
-                        }
-                    ]
-               },
-               {...}
-          ]
-     }
+ {
+    "data": [
+            {
+                "id": 1,
+                "code": "QF400",
+                "name_airlines": "Qantas (QF)",
+                "created_at": "2020-08-23T15:43:13.000000Z",
+                "updated_at": "2020-08-23T15:43:13.000000Z",
+                "flight": [
+                    {
+                        "id": 1,
+                        "user_id": 1,
+                        "airline_id": 1,
+                        "flightNumber": "QF400",
+                        "departurePort": "MEL",
+                        "arrivalPort": "SDY",
+                        "departureTime": "2020-08-23 15:43:13",
+                        "arrivalTime": "2020-08-24 15:43:13",
+                        "created_at": "2020-08-23T15:43:13.000000Z",
+                        "updated_at": "2020-08-23T15:43:13.000000Z"
+                    }
+                ]
+           },
+           {...}
+      ]
+ }
+```
+
+## Sample Filter Flights 
+GET ``http://localhost:8000/flights/filter/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159&flightNumber=CX500``
+will be return :
+```json
+{
+    "result": {
+        "1": {
+            "id": 3,
+            "user_id": 1,
+            "airline_id": 3,
+            "flightNumber": "CX500",
+            "departurePort": "SDY",
+            "arrivalPort": "MEL",
+            "departureTime": "2020-08-23 15:43:13",
+            "arrivalTime": "2020-08-24 15:43:13",
+            "created_at": "2020-08-23T15:43:13.000000Z",
+            "updated_at": "2020-08-23T15:43:13.000000Z"
+        }
+    }
+}
 ```
 
 ## Route Config
