@@ -15,17 +15,12 @@ class AirlineController extends Controller
     {
       $airlines = Airlines::with(['flight'])->orderBy('created_at', 'DESC')->get();
       return response()->json(['data' => $airlines]);
-        // $res['success'] = true;
-        // $res['result'] = $airline->all();
-
-        // return response($res);
     }
 
     public function create(Request $request)
     {
         $airline = new Airlines;
         $airline->fill([
-            'code' => $request->input('code'),
             'name_airlines' => $request->input('name_airlines')
         ]);
         if($airline->save()) {
@@ -54,13 +49,12 @@ class AirlineController extends Controller
 
     public function update(Request $request, $id)
     {
-        if ($request->has('code')) {
+        if ($request->has('name_airlines')) {
             $airline = Airlines::find($id);
-            $airline->code = $request->input('code');
             $airline->name_airlines = $request->input('name_airlines');
             if ($airline->save()) {
                 $res['success'] = true;
-                $res['result'] = 'Success update '.$request->input('code').' and '.$request->input('name_airlines');
+                $res['result'] = 'Success update '.$request->input('name_airlines');
 
                 return response()->json($res);
             } else {

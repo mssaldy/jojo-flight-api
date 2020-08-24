@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 class Airlines extends Model
 {
     protected $fillable = [
-        'code', 'name_airlines'
+        'name_airlines'
     ];
 
     public function flight() {
