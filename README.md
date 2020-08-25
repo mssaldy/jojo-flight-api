@@ -151,6 +151,9 @@ Sample Route:
 * POST http://localhost:8000/flights/create/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159&user_id=1&airline_id=2&flightNumber=QF110&departurePort=JKT&arrivalPort=BDG&departureTime=2020-08-24 15:43:13&arrivalTime=2020-08-24 15:43:13
 ```
 
+## How to Test API using Swagger in local
+Open terminal and type `php -S localhost:8000 public/index.php` then open browser and type `http://localhost:8000/api/jojo-flight-api`
+
 ## Contributing
 
 Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
