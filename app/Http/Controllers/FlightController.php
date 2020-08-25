@@ -45,4 +45,20 @@ class FlightController extends Controller
         
         return response()->json(['result' => $filtered]); 
     }
+
+    public function read(Request $request, $id)
+    {
+        $flight = Flights::where('id', $id)->first();
+        if ($flight !== null) {
+            $res['success'] = true;
+            $res['result'] = $flight;
+
+            return response()->json($res);
+        } else {
+            $res['success'] = true;
+            $res['result'] = 'Flights not found';
+
+            return response()->json($res);
+        }
+    }
 }

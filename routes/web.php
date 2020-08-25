@@ -24,6 +24,7 @@ $router->get('/user/{id}', ['middleware' => 'auth', 'uses' => 'LoginController@i
 $router->get('/flights', 'FlightController@index');
 $router->post('/flights/create', 'FlightController@create');
 $router->get('/flights/filter', 'FlightController@search');
+$router->get('/flights/{id}', 'FlightController@read');
 
 $router->get('/airlines', 'AirlineController@index');
 $router->post('/airlines/create', 'AirlineController@create');
