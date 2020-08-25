@@ -143,12 +143,12 @@ will be return :
 ## Route Config
 Sample Route:
 ```php
-* GET  http://localhost:8000/flights/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
-* GET  http://localhost:8000/flights/filter/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159&flightNumber=CX500
-* GET  http://localhost:8000/airlines/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
-* GET  http://localhost:8000/airlines/delete/1?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
-* POST http://localhost:8000/airlines/create/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159&code=QF110&name_airlines=Qantas (QF)
-* POST http://localhost:8000/flights/create/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159&user_id=1&airline_id=2&flightNumber=QF110&departurePort=JKT&arrivalPort=BDG&departureTime=2020-08-24 15:43:13&arrivalTime=2020-08-24 15:43:13
+* GET    http://localhost:8000/flights/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
+* GET    http://localhost:8000/flights/filter/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159&flightNumber=CX500
+* GET    http://localhost:8000/airlines/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
+* DELETE http://localhost:8000/airlines/delete/1?api_token=734e1d761f6d87a73b4a0434910356a568f5b159
+* POST   http://localhost:8000/airlines/create/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159&code=QF110&name_airlines=Qantas (QF)
+* POST   http://localhost:8000/flights/create/?api_token=734e1d761f6d87a73b4a0434910356a568f5b159&user_id=1&airline_id=2&flightNumber=QF110&departurePort=JKT&arrivalPort=BDG&departureTime=2020-08-24 15:43:13&arrivalTime=2020-08-24 15:43:13
 ```
 
 ## How to Test API using Swagger in local
