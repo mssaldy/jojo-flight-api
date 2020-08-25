@@ -147,7 +147,7 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
  */
 
  /**
- * @OA\GET(
+ * @OA\DELETE(
  *     path="/airlines/delete/{id}",
      *     @OA\Parameter(
      *         name="id",

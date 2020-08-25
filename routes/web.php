@@ -30,4 +30,4 @@ $router->get('/airlines', 'AirlineController@index');
 $router->post('/airlines/create', 'AirlineController@create');
 $router->get('/airlines/{id}', 'AirlineController@read');
 $router->post('/airlines/update/{id}', 'AirlineController@update');
-$router->get('/airlines/delete/{id}', 'AirlineController@delete');
+$router->delete('/airlines/delete/{id}', 'AirlineController@delete');

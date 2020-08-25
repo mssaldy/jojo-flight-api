@@ -189,7 +189,7 @@
             }
         },
         "/airlines/delete/{id}": {
-            "get": {
+            "delete": {
                 "parameters": [
                     {
                         "name": "id",
